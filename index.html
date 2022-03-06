@@ -7,6 +7,26 @@
     <title>Tic Tac Toe</title>
   </head>
   <body>
-       <script src="/assets/JS/index.js"></script>
+    <div id="heading"><h1>Tic Tac Toe</h1></div>
+    <div class="board" data-board>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+  
+    <div class="endgame-message" data-winning-message>
+        <p class="endgame-message-text" data-winning-message-text>X Won!</p>
+        <button class="endgame-message-button" data-restart-button>
+          Restart
+        </button>
+    </div>
+
+    <script src="/assets/JS/index.js"></script>
   </body>
 </html>
