@@ -1,7 +1,7 @@
 const cellElements = document.getElementsByClassName('data-cell');
 const board = document.getElementsByClassName('data-board')[0];
 const turnMessage = document.getElementsByClassName('turn-message-text')[0];
-const engGameMessageDiv = document.getElementsByClassName('data-endgame-message')[0];
+const endGameMessageDiv = document.getElementsByClassName('data-endgame-message')[0];
 const endGameMessageText = document.getElementsByClassName('data-endgame-message-text')[0];
 const restartButton = document.getElementsByClassName('restart-button')[0];
 
@@ -25,7 +25,7 @@ function startGame() {
   
   isCircleTurn = false;  
 
-  for (const cell of cellElements) {
+  for (let cell of cellElements) {
 
     cell.classList.remove('circle');
     cell.classList.remove('x');
@@ -35,7 +35,7 @@ function startGame() {
   }
 
   setBoardHoverClass();
-  engGameMessageDiv.classList.remove('show-endgame-message');
+  endGameMessageDiv.classList.remove('show-endgame-message');
 
 }
 
@@ -47,7 +47,7 @@ function endGame(isDraw) {
         endGameMessageText.textContent = isCircleTurn ? "O Won" : "X Won"
     }
 
-    engGameMessageDiv.classList.add('show-endgame-message');
+    endGameMessageDiv.classList.add('show-endgame-message');
 
 }
 
@@ -67,6 +67,14 @@ function checkForWin(currentPlayer) {
 
 }
 
+function checkForDraw() {
+
+    return [...cellElements].every(function(cell) {
+        return cell.classList.contains('x') || cell.classList.contains('circle');
+    })
+
+}
+
 function placeMark(cell, classToAdd) {
 
     cell.classList.add(classToAdd);
@@ -82,7 +90,7 @@ function setBoardHoverClass() {
         board.classList.add('circle');
         turnMessage.textContent = "Circle Turn"
     } else {
-        board.classList.add('circle');
+        board.classList.add('x');
         turnMessage.textContent = "X Turn"
     }
 
@@ -104,14 +112,18 @@ function handleClick(e) {
     placeMark(e.target, classToAdd);
     // Check if win
     let isWin = checkForWin(classToAdd);
+    // Check if Draw
+    let isDraw = checkForDraw();
+
     if (isWin) {
         endGame(false)
+    } else if (isDraw) {
+        endGame(true);
+    } else {
+        // Swap turns
+        swapTurns();
     }
-    // Check if draw
 
-
-    // Swap turns
-    swapTurns();
 }
 
 startGame();
