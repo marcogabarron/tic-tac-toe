@@ -7,20 +7,23 @@
   #heading {
       text-align: center;
       margin-top: 20px;
+      color: black;
   }
   
 .turn-message-text {
     text-align: center;
     margin-top: 20px;
+    color: white;
+    font-size:larger;
 }
 
   body {
-    height: 80vh;
+    height: 70vh;
     width: 100vw;
     background: linear-gradient(
       90deg,
-      rgba(65, 185, 131, 1) 0%,
-      rgba(0, 212, 255, 1) 100%
+      rgba(63, 184, 130, 1) 0%,
+      rgba(0, 210, 250, 1) 100%
     );
   }
   
@@ -156,6 +159,7 @@ Class X or Circle added to board class to determine with player turn it is. */
     color: white;
   }
   
+  /* Hover effect added to restart button */
   .endgame-message-button:hover {
     color: rgba(65, 185, 131, 1);
     background-color: white;
@@ -167,6 +171,7 @@ Class X or Circle added to board class to determine with player turn it is. */
     font-size: 5rem;
   }
   
+  /* Display it only if it is End Game */
   .show-endgame-message {
     display: flex;
   }

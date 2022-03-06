@@ -68,7 +68,7 @@ function checkForWin(currentPlayer) {
 }
 
 function checkForDraw() {
-
+    // Check if every position of the board is filled with X or Circle
     return [...cellElements].every(function(cell) {
         return cell.classList.contains('x') || cell.classList.contains('circle');
     })
@@ -81,6 +81,7 @@ function placeMark(cell, classToAdd) {
 
 }
 
+// Remove classes X and Circle from board and add hover effect to player's turn
 function setBoardHoverClass() {
 
     board.classList.remove('x');
