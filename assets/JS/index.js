@@ -4,6 +4,21 @@ const turnMessage = document.getElementsByClassName("turn-message-text")[0];
 
 let isCircleTurn = false;
 
+function startGame() {
+
+  for (const cell of cellElements) {
+
+    cell.classList.remove("circle");
+    cell.classList.remove("x");
+    cell.removeEventListener("click", handleClick);
+    cell.addEventListener("click", handleClick, { once: true });
+
+  }
+
+  board.classList.add('x');
+
+}
+
 function placeMark(event, classToAdd) {
 
     event.classList.add(classToAdd);
@@ -38,11 +53,4 @@ function handleClick(event) {
     swapTurns();
 }
 
-  for (const cell of cellElements) {
-
-    cell.classList.remove("circle");
-    cell.classList.remove("x");
-    cell.removeEventListener("click", handleClick);
-    cell.addEventListener("click", handleClick, { once: true });
-
-  }
+startGame();
