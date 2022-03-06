@@ -1,11 +1,12 @@
-const cellElements = document.getElementsByClassName("data-cell");
-const board = document.getElementsByClassName("data-board")[0];
-const turnMessage = document.getElementsByClassName("turn-message-text")[0];
+const cellElements = document.getElementsByClassName('data-cell');
+const board = document.getElementsByClassName('data-board')[0];
+const turnMessage = document.getElementsByClassName('turn-message-text')[0];
 const engGameMessageDiv = document.getElementsByClassName('data-endgame-message')[0];
 const endGameMessageText = document.getElementsByClassName('data-endgame-message-text')[0];
+const restartButton = document.getElementsByClassName('restart-button')[0];
 
 
-let isCircleTurn = false;
+let isCircleTurn;
 
 // Combinations using cell position to represent winning cases
 const winCombinations = [
@@ -21,15 +22,20 @@ const winCombinations = [
 
 // Starting or Restarting Game. Removing all classes and initiating game with X turn
 function startGame() {
+  
+  isCircleTurn = false;  
 
   for (const cell of cellElements) {
 
-
-    cell.addEventListener("click", handleClick, { once: true });
+    cell.classList.remove('circle');
+    cell.classList.remove('x');
+    cell.removeEventListener('click', handleClick);
+    cell.addEventListener('click', handleClick, { once: true });
 
   }
 
-  board.classList.add('x');
+  setBoardHoverClass();
+  engGameMessageDiv.classList.remove('show-endgame-message');
 
 }
 
@@ -61,16 +67,14 @@ function checkForWin(currentPlayer) {
 
 }
 
-function placeMark(event, classToAdd) {
+function placeMark(cell, classToAdd) {
 
-    event.classList.add(classToAdd);
+    cell.classList.add(classToAdd);
 
 }
 
-// Swaping turns and updating turnMessage. Removing X and Circle classes from board to add it again with class turn.
-function swapTurns() {
+function setBoardHoverClass() {
 
-    isCircleTurn = !isCircleTurn;
     board.classList.remove('x');
     board.classList.remove('circle');
 
@@ -84,12 +88,20 @@ function swapTurns() {
 
 }
 
-function handleClick(event) {
+// Swaping turns and updating turnMessage. Removing X and Circle classes from board to add it again with class turn.
+function swapTurns() {
+
+    isCircleTurn = !isCircleTurn;
+    setBoardHoverClass();
+
+}
+
+function handleClick(e) {
 
     // Adding X and Circle
     let classToAdd = isCircleTurn ? 'circle' : 'x';
      
-    placeMark(event.target, classToAdd);
+    placeMark(e.target, classToAdd);
     // Check if win
     let isWin = checkForWin(classToAdd);
     if (isWin) {
@@ -103,3 +115,4 @@ function handleClick(event) {
 }
 
 startGame();
+restartButton.addEventListener('click', startGame);
