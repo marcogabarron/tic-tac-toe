@@ -127,3 +127,46 @@ Class X or Circle added to board class to determine with player turn it is. */
 .cell.circle {
   cursor: not-allowed;
 }
+
+/* End Game message screen */
+
+/* End Game message Div. Div will only appear if game is over */
+.endgame-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+  }
+  
+  /* End Game message Button Restart */
+  .endgame-message-button {
+    font-size: 2.5rem;
+    background-color: rgba(65, 185, 131, 1);
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    margin-top: 16px;
+    color: white;
+  }
+  
+  .endgame-message-button:hover {
+    color: rgba(65, 185, 131, 1);
+    background-color: white;
+  }
+  
+  /* End Game message who is the winner */
+  .endgame-message-text {
+    color: white;
+    font-size: 5rem;
+  }
+  
+  .show-endgame-message {
+    display: flex;
+  }
