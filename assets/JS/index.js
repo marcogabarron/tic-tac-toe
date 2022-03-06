@@ -1,6 +1,9 @@
 const cellElements = document.getElementsByClassName("data-cell");
 const board = document.getElementsByClassName("data-board")[0];
 const turnMessage = document.getElementsByClassName("turn-message-text")[0];
+const engGameMessageDiv = document.getElementsByClassName('data-endgame-message')[0];
+const endGameMessageText = document.getElementsByClassName('data-endgame-message-text')[0];
+
 
 let isCircleTurn = false;
 
@@ -30,14 +33,26 @@ function startGame() {
 
 }
 
+function endGame(isDraw) {
+
+    if (isDraw) {
+        endGameMessageText.textContent = "Draw!"
+    } else {
+        endGameMessageText.textContent = isCircleTurn ? "O Won" : "X Won"
+    }
+
+    engGameMessageDiv.classList.add('show-endgame-message');
+
+}
+
 // Checking for win, testing classes agains all combinations in winCombinations.
 function checkForWin(currentPlayer) {
 
-    //Test if one of the winCombinations is true for array elements
+    //Test if one of the winCombinations is true for array elements. Example: testing [0,1,2] then [3,4,5] and so on. I will return true if one of them is true
     return winCombinations.some(function(winCases) {
-        // Test every position every position of the array element
+        // Test every position of the array element. It will return true if all of them is true. Example: if there is a currentPlayer for [0,1, 2].
         return winCases.every(function(index) {
-            // test if the current player has a winning condition
+            // Test if the position has the class of the currentPlayer.
             return cellElements[index].classList.contains(currentPlayer);
 
         })
@@ -78,9 +93,11 @@ function handleClick(event) {
     // Check if win
     let isWin = checkForWin(classToAdd);
     if (isWin) {
-        alert("Winner")
+        endGame(false)
     }
     // Check if draw
+
+
     // Swap turns
     swapTurns();
 }
