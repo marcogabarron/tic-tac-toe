@@ -37,6 +37,14 @@
     grid-template-columns: repeat(3, auto);
   }
 
+  /* Giving hover effect some transparency to not just be white. !important added to override background color set on cell. */
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after,
+.board.x .cell:not(.x):not(.circle):hover::before {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
   /* Board Cell Style */
 .cell {
     width: 100px;
@@ -77,7 +85,8 @@
     display: none;
 }
 
-/* Styling X with CSS */
+/* Styling x with CSS hover effect to cell. Hover will happen pending on empty cell. Testing if class cell has x or circle class to determine if it is empty 
+Class X or Circle added to board class to determine with player turn it is. */
 .cell.x::before,
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::after,
@@ -99,7 +108,8 @@
   transform: rotate(-45deg);
 }
 
-/* Styling circle with CSS */
+/* Styling circle with CSS hover effect to cell. Hover will happen pending on empty cell. Testing if class cell has x or circle class to determine if it is empty 
+Class X or Circle added to board class to determine with player turn it is. */
 .cell.circle::before,
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::after,
@@ -110,4 +120,10 @@
   background: white;
   position: absolute;
   border-radius: 50%;
+}
+
+/* Not allowed selecting */
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
 }
