@@ -20,7 +20,12 @@ const winCombinations = [
     [2, 4, 6],
   ];
 
-// Starting or Restarting Game. Removing all classes and initiating game with X turn
+  /**
+   * Starting or Restarting Game. Removing all classes and initiating game with X turn
+   * Add event listener to all cells.
+   * Remove end game message if it is a restart of the game.
+   * Call setBoardHover.
+   */
 function startGame() {
   
   isCircleTurn = false;  
@@ -34,11 +39,14 @@ function startGame() {
 
   }
 
-  setBoardHoverClass();
+  setBoardHover();
   endGameMessageDiv.classList.remove('show-endgame-message');
 
 }
-
+/**
+ * End Game function to display correct message and restart button.
+ * @param {*} isDraw Boolean parameter, true if it is a draw.
+ */
 function endGame(isDraw) {
 
     if (isDraw) {
@@ -51,14 +59,20 @@ function endGame(isDraw) {
 
 }
 
-// Checking for win, testing classes agains all combinations in winCombinations.
+/**
+ * Checking for win, testing classes agains all combinations in winCombinations.
+ * @param {*} currentPlayer  Player currently selected (X or Cicle).
+ * @returns Test if one of the winCombinations is true for array elements. Example: testing [0,1,2] then [3,4,5] and so on. I will return true if one of them is true.
+ * @returns Test every position of the array element. It will return true if all of them is true. Example: if there is a currentPlayer for [0,1, 2].
+ * @returns Test if the position has the class of the currentPlayer.
+ */
 function checkForWin(currentPlayer) {
 
-    //Test if one of the winCombinations is true for array elements. Example: testing [0,1,2] then [3,4,5] and so on. I will return true if one of them is true
+    //Test if one of the winCombinations is true for array elements. Example: testing [0,1,2] then [3,4,5] and so on. I will return true if one of them is true.
     return winCombinations.some(function(winCases) {
-        // Test every position of the array element. It will return true if all of them is true. Example: if there is a currentPlayer for [0,1, 2].
+        //Test every position of the array element. It will return true if all of them is true. Example: if there is a currentPlayer for [0,1, 2].
         return winCases.every(function(index) {
-            // Test if the position has the class of the currentPlayer.
+            //Test if the position has the class of the currentPlayer.
             return cellElements[index].classList.contains(currentPlayer);
 
         });
@@ -67,8 +81,12 @@ function checkForWin(currentPlayer) {
 
 }
 
+/**
+ * Checking for a draw.
+ * @returns Check if every position of the board is filled with X or Circle
+ */
 function checkForDraw() {
-    // Check if every position of the board is filled with X or Circle
+    
     return [...cellElements].every(function(cell) {
         return cell.classList.contains('x') || cell.classList.contains('circle');
     });
@@ -81,8 +99,10 @@ function placeMark(cell, classToAdd) {
 
 }
 
-// Remove classes X and Circle from board and add hover effect to player's turn
-function setBoardHoverClass() {
+/** 
+ * Remove classes X and Circle from board and add hover effect to player's turn
+ */ 
+function setBoardHover() {
 
     board.classList.remove('x');
     board.classList.remove('circle');
@@ -97,14 +117,22 @@ function setBoardHoverClass() {
 
 }
 
-// Swaping turns and updating turnMessage. Removing X and Circle classes from board to add it again with class turn.
+/**
+ * Swaping turns and updating turnMessage. Removing X and Circle classes from board to add it again with class turn.
+ */
 function swapTurns() {
 
     isCircleTurn = !isCircleTurn;
-    setBoardHoverClass();
+    setBoardHover();
 
 }
 
+/**
+ * Adding X and Circle.
+ * Check if win then call function check for Win.
+ * Check if Draw then call function check for Draw.
+ * @param {*} e Event to be handled
+ */
 function handleClick(e) {
 
     // Adding X and Circle
