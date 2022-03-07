@@ -1,6 +1,9 @@
 # Tic-Tac-Toe
-Website developed to show Marco Gabarron's portfolio. Website includes Main landing page, projects page and contact me page.
-User will find my most recent projects using HTML, CSS, JavaScript and Swift.
+The very well known game Tic-Tac-Toe is back and more popular than ever! Tic-Tac-Toe is game that you can quickly learn the rules and have fun with your friends and family everywhere.
+Practice your strategies and become better and better. Tic-Tac-Toe is a family friendly game that can be played by the whole family of different ages and they will all know that the game is about.
+
+Get to know different strategies and train your brain to become quicker and quicker.
+Are you ready?
 
 ![Screens Screenshot](assets/images/screens-screenshot.png)
 
@@ -25,19 +28,28 @@ Fonts and color Pallet chosen to be playful and easy to read.
 ## Features
 ------
 
-- Game:  
-    - Game detecting who won or if it is a draw.
-    - Message of winner appears after the game is finished along with a restart button.
-    - Indication of Player's turn in text as well as hover effect.
+- Header:
+    - Header to clearly tell the users what game they are playing.
+
+![Header Screenshot](assets/images/navbar-screenshot.png)
+
+- Game options:
+    - User can select any of the empty cells to mark with their symbol(X or Circle).
     - Block Symbol added when player tries to select a non empty cell.
 
-![Game Screenshot](assets/images/navbar-screenshot.png)
+![GameOptions Screenshot](assets/images/navbar-screenshot.png)
 
-- Winner's Logic:
+- Player's Turn Indication:  
+    - Indication of Player's turn in text and hover effect.
+    - Indication of Player's turn with a hover effect
+
+![PlayerTurn Screenshot](assets/images/navbar-screenshot.png)
+
+- Game Result:
     - Searching throw every win combination after every play to check if there is already a winner.
-    - Message stating who won and a restart button added.
+    - Display on the screen who won and a restart button added.
 
-![WinnerMessage Screenshot](assets/images/navbar-screenshot.png)
+![GameResult Screenshot](assets/images/navbar-screenshot.png)
 
 ## Testing
 ------
@@ -46,13 +58,13 @@ Fonts and color Pallet chosen to be playful and easy to read.
 
 - Responsiveness of website tested and can confirm it is retaining design and readability on all screen sizes.
 
-- I confirmed Home Page is readable and easy to unsderstand.
+- I confirmed Home Page is readable and easy to understand.
 
 - Tested all win scenarios to check if winning check is being carried out correctly.
 
-- Tested all draw scenarios to check if draw check is being carried out correctly
+- Tested all draw scenarios to check if draw check is being carried out correctly.
 
-- Game changing turns properly 
+- Game changing turns properly.
 
 - Confirmed all cells have an event listener.
 
@@ -71,9 +83,6 @@ Fonts and color Pallet chosen to be playful and easy to read.
 - CSS: 
     - No errors were returned when passing through the official (jigsaw)) validator.
 
-- JavaScript:
-    - No errors were returned when passing through
-
 - Acessibility
     - I confirmed that the colors and fonts chosen are easy to read and accessible by running through lighthouse in devtools.
 
@@ -90,7 +99,7 @@ No unfixed bugs
     - From the source section drop-down menu, select the Master Branch.
     - Once the master branch has been selected, the page provided the link to the completed website.
 
-The live link can be found here: <a href="https://marcogabarron.github.io/tic-tac-toe/" target="_blank">Tic-Tac-Toe</a>
+The live link can be found here: <a href="https://marcogabarron.github.io/tic-tac-toe/" target="_blank">Play Tic-Tac-Toe</a>
 
 ## Future Developmets
 ------

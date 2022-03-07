@@ -42,9 +42,9 @@ function startGame() {
 function endGame(isDraw) {
 
     if (isDraw) {
-        endGameMessageText.textContent = "Draw!"
+        endGameMessageText.textContent = "Draw!";
     } else {
-        endGameMessageText.textContent = isCircleTurn ? "O Won" : "X Won"
+        endGameMessageText.textContent = isCircleTurn ? "O Won" : "X Won";
     }
 
     endGameMessageDiv.classList.add('show-endgame-message');
@@ -61,9 +61,9 @@ function checkForWin(currentPlayer) {
             // Test if the position has the class of the currentPlayer.
             return cellElements[index].classList.contains(currentPlayer);
 
-        })
+        });
 
-    })
+    });
 
 }
 
@@ -71,7 +71,7 @@ function checkForDraw() {
     // Check if every position of the board is filled with X or Circle
     return [...cellElements].every(function(cell) {
         return cell.classList.contains('x') || cell.classList.contains('circle');
-    })
+    });
 
 }
 
@@ -89,10 +89,10 @@ function setBoardHoverClass() {
 
     if (isCircleTurn) {
         board.classList.add('circle');
-        turnMessage.textContent = "Circle Turn"
+        turnMessage.textContent = "Circle Turn";
     } else {
         board.classList.add('x');
-        turnMessage.textContent = "X Turn"
+        turnMessage.textContent = "X Turn";
     }
 
 }
@@ -117,7 +117,7 @@ function handleClick(e) {
     let isDraw = checkForDraw();
 
     if (isWin) {
-        endGame(false)
+        endGame(false);
     } else if (isDraw) {
         endGame(true);
     } else {
