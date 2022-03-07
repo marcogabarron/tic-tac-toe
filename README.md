@@ -90,7 +90,7 @@ No unfixed bugs
     - From the source section drop-down menu, select the Master Branch.
     - Once the master branch has been selected, the page provided the link to the completed website.
 
-The live link can be found here: <a href="https://marco-gabarron.github.io/marco-gabarron-resume/" target="_blank">Tic-Tac-Toe</a>
+The live link can be found here: <a href="https://marcogabarron.github.io/tic-tac-toe/" target="_blank">Tic-Tac-Toe</a>
 
 ## Future Developmets
 ------
