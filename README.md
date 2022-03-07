@@ -31,25 +31,25 @@ Fonts and color Pallet chosen to be playful and easy to read.
 - Header:
     - Header to clearly tell the users what game they are playing.
 
-![Header Screenshot](assets/images/navbar-screenshot.png)
+![Header Screenshot](assets/images/header-screenshot.png)
 
 - Game options:
     - User can select any of the empty cells to mark with their symbol(X or Circle).
     - Block Symbol added when player tries to select a non empty cell.
 
-![GameOptions Screenshot](assets/images/navbar-screenshot.png)
+![GameOptions Screenshot](assets/images/gameoptions-screenshot.png)
 
 - Player's Turn Indication:  
     - Indication of Player's turn in text and hover effect.
     - Indication of Player's turn with a hover effect
 
-![PlayerTurn Screenshot](assets/images/navbar-screenshot.png)
+![PlayerTurn Screenshot](assets/images/playerturn-screenshot.png)
 
 - Game Result:
     - Searching throw every win combination after every play to check if there is already a winner.
     - Display on the screen who won and a restart button added.
 
-![GameResult Screenshot](assets/images/navbar-screenshot.png)
+![GameResult Screenshot](assets/images/gameresult-screenshot.png)
 
 ## Testing
 ------
