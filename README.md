@@ -51,6 +51,16 @@ Fonts and color Pallet chosen to be playful and easy to read.
 
 ![GameResult Screenshot](assets/images/gameresult-screenshot.png)
 
+- Score Count:
+    - 
+
+![ScoreCount Screenshot](assets/images/gameresult-screenshot.png)
+
+- Footer:
+    - 
+
+![Footer Screenshot](assets/images/gameresult-screenshot.png)
+
 ## Testing
 ------
 
@@ -104,7 +114,6 @@ The live link can be found here: <a href="https://marcogabarron.github.io/tic-ta
 ## Future Developmets
 ------
 
-- Add score count to game.
 - Add more animations to the game. 
 - Add functionality where players can select their names.
 - Add functionality where players can choose if X or Circle and which one is starting.

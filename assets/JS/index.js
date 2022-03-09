@@ -4,9 +4,13 @@ const turnMessage = document.getElementsByClassName('turn-message-text')[0];
 const endGameMessageDiv = document.getElementsByClassName('data-endgame-message')[0];
 const endGameMessageText = document.getElementsByClassName('data-endgame-message-text')[0];
 const restartButton = document.getElementsByClassName('restart-button')[0];
+const scoreXText = document.getElementsByClassName('score-x')[0];
+const scoreCircleText = document.getElementsByClassName('score-circle')[0];
 
 
 let isCircleTurn;
+let scoreX = 0;
+let scoreCircle = 0;
 
 // Combinations using cell position to represent winning cases
 const winCombinations = [
@@ -53,6 +57,13 @@ function endGame(isDraw) {
         endGameMessageText.textContent = "Draw!";
     } else {
         endGameMessageText.textContent = isCircleTurn ? "O Won" : "X Won";
+        if (isCircleTurn) {
+            ++scoreCircle;
+            scoreCircleText.textContent = `O: ${scoreCircle}`
+        }else if (!isCircleTurn) {
+            ++scoreX;
+            scoreXText.textContent = `X: ${scoreX}`
+        }
     }
 
     endGameMessageDiv.classList.add('show-endgame-message');

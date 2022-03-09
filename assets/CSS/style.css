@@ -32,7 +32,6 @@
     display: grid;
     width: 100%;
     height: 100%;
-    display: grid;
     justify-content: center;
     align-content: center;
     justify-items: center;
@@ -145,10 +144,10 @@ Class X or Circle added to board class to determine with player turn it is. */
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
     flex-direction: column;
-  }
+}
   
   /* End Game message Button Restart */
-  .endgame-message-button {
+.endgame-message-button {
     font-size: 2.5rem;
     background-color: rgba(65, 185, 131, 1);
     padding: 10px 15px;
@@ -157,21 +156,71 @@ Class X or Circle added to board class to determine with player turn it is. */
     border: none;
     margin-top: 16px;
     color: white;
-  }
+}
   
   /* Hover effect added to restart button */
-  .endgame-message-button:hover {
-    color: rgba(65, 185, 131, 1);
+.endgame-message-button:hover {
+    color: rgba(62, 184, 129, 1);
     background-color: white;
-  }
+}
   
   /* End Game message who is the winner */
-  .endgame-message-text {
+.endgame-message-text {
     color: white;
     font-size: 5rem;
-  }
+}
   
   /* Display it only if it is End Game */
-  .show-endgame-message {
+.show-endgame-message {
     display: flex;
-  }
+}
+
+.game-area {
+    margin: 0 auto;
+    color: #fff;
+    background-color: rgba(60, 60, 60, 0.6);
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 15%;
+}
+
+/* Footer */
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    padding-top: 10px;
+    color: #fff;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h4{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content p{
+    max-width: 500px;
+    margin: 5px auto;
+    line-height: 28px;
+    font-size: 14px;
+    color: #cacdd2;
+}
+
+/* Score */
+.score {
+    text-align: center;
+}
