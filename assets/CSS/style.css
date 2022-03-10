@@ -15,7 +15,6 @@
   
 .turn-message-text {
     text-align: center;
-    margin-top: 10px;
     color: white;
     font-size:larger;
 }
@@ -233,4 +232,35 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+/* Media queries */
+
+/* For medium screen sizes from 950px wide and down */
+@media screen and (max-width: 950px) {
+    #main {
+        height: 70%;
+    }
+
+    .game-area {
+        max-height: 400px;
+        padding: 15px;
+    }
+
+}
+
+/* For small screen sizes 800px and down */
+@media screen and (max-width: 800px) {
+    #main {
+        margin: 0;
+    }
+
+    .game-area {
+        margin-top: 0;
+    }
+
+    #heading {
+        margin-top: 0px;
+    }
+
 }
