@@ -58,7 +58,7 @@ Fonts and color Pallet chosen to be playful and easy to read.
 ![ScoreCount Screenshot](assets/images/score-screenshot.png)
 
 - Footer:
-    - Footer with copywright information.
+    - Footer with copyright information.
 
 ![Footer Screenshot](assets/images/footer-screenshot.png)
 
@@ -85,7 +85,7 @@ Fonts and color Pallet chosen to be playful and easy to read.
 
 ##### Solved Bugs
 
-- Draw checking wasn't working properly after, had to do some extra studying to understand how I could check if every cell was filled. Discovered how to use every() method for my cellElements.
+- Draw checking wasn't working properly after, had to do some extra studying to understand how I could check if every cell was filled. Bug fixed using every() method for my cellElements.
 
 ### Validator Testing
 - HTML: 
