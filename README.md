@@ -30,6 +30,7 @@ Fonts and color Pallet chosen to be playful and easy to read.
 
 - Header:
     - Header to clearly tell the users what game they are playing.
+    - Font Pacific taken from Google Fonts.
 
 ![Header Screenshot](assets/images/header-screenshot.png)
 
@@ -52,14 +53,14 @@ Fonts and color Pallet chosen to be playful and easy to read.
 ![GameResult Screenshot](assets/images/gameresult-screenshot.png)
 
 - Score Count:
-    - 
+    - Score count showing score of both players.
 
-![ScoreCount Screenshot](assets/images/gameresult-screenshot.png)
+![ScoreCount Screenshot](assets/images/score-screenshot.png)
 
 - Footer:
-    - 
+    - Footer with copywright information.
 
-![Footer Screenshot](assets/images/gameresult-screenshot.png)
+![Footer Screenshot](assets/images/footer-screenshot.png)
 
 ## Testing
 ------
@@ -123,3 +124,6 @@ The live link can be found here: <a href="https://marcogabarron.github.io/tic-ta
 
 ### Content
 - Logic behind built with my mentor's help and StackOverflow.
+
+### Media
+- 1 Font(Pacifico) used throughout the project taken from <a href="https://fonts.google.com/" target="_blank">Google Fonts.</a>
