@@ -1,34 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+}
 
-  #heading {
-      text-align: center;
-      margin-top: 20px;
-      color: black;
-  }
+#heading {
+    text-align: center;
+    margin-top: 20px;
+    color: black;
+    font-family: "pacifico";
+}
   
 .turn-message-text {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
     color: white;
     font-size:larger;
 }
 
-  body {
-    height: 70vh;
+body {
+    height: 100vh;
     width: 100vw;
     background: linear-gradient(
       90deg,
       rgba(63, 184, 130, 1) 0%,
       rgba(0, 210, 250, 1) 100%
     );
-  }
+}
   
   /* Board Style */
-  .board {
+.board {
     display: grid;
     width: 100%;
     height: 100%;
@@ -39,15 +42,15 @@
     grid-template-columns: repeat(3, auto);
   }
 
-  /* Giving hover effect some transparency to not just be white. !important added to override background color set on cell. */
+/* Giving hover effect some transparency to not just be white. !important added to override background color set on cell. */
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.circle .cell:not(.x):not(.circle):hover::after,
 .board.x .cell:not(.x):not(.circle):hover::before {
-  background: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.3) !important;
 }
 
-  /* Board Cell Style */
+/* Board Cell Style */
 .cell {
     width: 100px;
     height: 100px;
@@ -56,31 +59,31 @@
     justify-content: center;
     align-items: center;
     position: relative;
-  }
+}
 
 /* Removing outside borders to look like a tic-tac-toe board */
 .cell:nth-child(1),
 .cell:nth-child(2),
 .cell:nth-child(3) {
-  border-top: none;
+    border-top: none;
 }
 
 .cell:nth-child(1),
 .cell:nth-child(4),
 .cell:nth-child(7) {
-  border-left: none;
+    border-left: none;
 }
 
 .cell:nth-child(7),
 .cell:nth-child(8),
 .cell:nth-child(9) {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .cell:nth-child(3),
 .cell:nth-child(6),
 .cell:nth-child(9) {
-  border-right: none;
+    border-right: none;
 }
 
 .endgame-message {
@@ -93,21 +96,21 @@ Class X or Circle added to board class to determine with player turn it is. */
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.x .cell:not(.x):not(.circle):hover::before {
-  content: "";
-  height: calc(100px * 0.15);
-  width: calc(100px * 0.9);
-  background: white;
-  position: absolute;
+    content: "";
+    height: calc(100px * 0.15);
+    width: calc(100px * 0.9);
+    background: white;
+    position: absolute;
 }
 
 .cell.x::before,
 .board.x .cell:not(.x):not(.circle):hover::before {
-  transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::after {
-  transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 /* Styling circle with CSS hover effect to cell. Hover will happen pending on empty cell. Testing if class cell has x or circle class to determine if it is empty 
@@ -116,18 +119,18 @@ Class X or Circle added to board class to determine with player turn it is. */
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.circle):hover::after {
-  content: "";
-  height: calc(100px * 0.9);
-  width: calc(100px * 0.9);
-  background: white;
-  position: absolute;
-  border-radius: 50%;
+    content: "";
+    height: calc(100px * 0.9);
+    width: calc(100px * 0.9);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
 }
 
 /* Not allowed selecting */
 .cell.x,
 .cell.circle {
-  cursor: not-allowed;
+    cursor: not-allowed;
 }
 
 /* End Game message screen */
@@ -193,7 +196,7 @@ footer{
     background: #111;
     height: auto;
     width: 100vw;
-    padding-top: 10px;
+    padding-top: 5px;
     color: #fff;
 }
 
@@ -223,4 +226,11 @@ footer{
 /* Score */
 .score {
     text-align: center;
+} 
+
+#main {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
